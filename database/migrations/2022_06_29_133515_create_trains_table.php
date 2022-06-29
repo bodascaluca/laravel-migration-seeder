@@ -15,13 +15,13 @@ class CreateTrainsTable extends Migration
     {
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
-            $table->string('azienda', 40 );
+            $table->string('azienda', 40);
             $table->string('Stazione_di_partenza', 30);
             $table->string('Stazione_di_arrivo', 30);
-            $table->time('orario_partenza', 5);
-            $table->time('orario_di_arrivo', 5);
+            $table->datetime('orario_partenza');
+            $table->datetime('orario_di_arrivo');
             $table->string('codice_treno', 30);
-            $table->tinyInteger('numero_carrozze', 20);
+            $table->integer('numero_carrozze');
             $table->boolean('in_orario',1);
             $table->boolean('cancellato', 0);
             $table->timestamps();
